@@ -1,3 +1,6 @@
 export const arrayOfCell = {current: [] as number[][]};
 
-console.dir("hi from constants " + JSON.stringify(arrayOfCell));
+// константы на 0 1 и 2 в переменные
+// и для css тоже сдлеать переменные для классов
+
+// console.dir("hi from constants " + JSON.stringify(arrayOfCell));

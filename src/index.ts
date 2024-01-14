@@ -5,10 +5,6 @@ import { setRows, setCols } from "./setSizeOfField";
 
 setRows();
 setCols();
-// createField(10, 10);
 
-
-
-console.log("hello from index ts");
 
 

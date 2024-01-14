@@ -31,6 +31,6 @@ export function createField(cols: number, rows: number) {
     cells.push(row);
   }
   arrayOfCell.current = cells;
-  console.dir(arrayOfCell);
+  // console.dir(arrayOfCell);
 }
 

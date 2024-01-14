@@ -1,4 +1,5 @@
 import { createField } from "./createField";
+// import { makeArrayOfCells } from "./arrayOfCells";
 
 export function buttonClick() {   
     document.getElementById("table")?.remove();
@@ -12,6 +13,7 @@ export function buttonClick() {
     inputRows.value = "";
     
     createField(cols, rows);
+    //makeArrayOfCells();
 }
 
 export function setRows (){

@@ -3,9 +3,29 @@
   margin: auto;
 }
 
-.td {
-  /* background-color: pink; */
+/* .td {
   height: 50px;
   width: 50px;
   border: 1px solid black;
+} */
+
+.dead{
+  height: 50px;
+  width: 50px;
+  border: 1px solid black;
+  background-color: white;
+}
+
+.alive{
+  height: 50px;
+  width: 50px;
+  border: 1px solid black;
+  background-color: rgb(74, 19, 74);
+}
+
+.will-be-dead{
+  height: 50px;
+  width: 50px;
+  border: 1px solid black;
+  background-color: pink;
 }

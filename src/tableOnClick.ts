@@ -1,4 +1,4 @@
-import { arrayOfCell } from "./constants";
+import { arrayOfCell, deadCell, aliveCell, willBeDeadCell, deadCSSClass, aliveCSSClass } from "./constants";
 
 export function handlerClick(e: MouseEvent){
     // console.log(e.target);
@@ -6,13 +6,13 @@ export function handlerClick(e: MouseEvent){
     if(target.hasAttribute("data-x") && target.hasAttribute("data-y")){
         const x = Number(target.getAttribute("data-x"));
         const y = Number(target.getAttribute("data-y"));
-        if(arrayOfCell.current[y][x] === 0){
-            arrayOfCell.current[y][x] = 1;
-        } else if(arrayOfCell.current[y][x] === 1) {
-            arrayOfCell.current[y][x] = 0;
+        if(arrayOfCell.current[y][x] === deadCell){
+            arrayOfCell.current[y][x] = aliveCell;
+        } else if(arrayOfCell.current[y][x] === aliveCell) {
+            arrayOfCell.current[y][x] = deadCell;
         }
         // 0 = dead; 1 = alive; 2 = willBeDead;
-        target.className = arrayOfCell.current[y][x]?"alive":"dead";
+        target.className = arrayOfCell.current[y][x]?aliveCSSClass:deadCSSClass;
     }
     console.dir(arrayOfCell);
   }

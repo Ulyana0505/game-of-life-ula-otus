@@ -1,7 +1,7 @@
 // import css from "./createField.module.css";
 import "./createField.css";
 import { handlerClick } from "./tableOnClick";
-import { arrayOfCell } from "./constants";
+import { arrayOfCell, deadCell, deadCSSClass, aliveCSSClass } from "./constants";
 
 export function createField(cols: number, rows: number) {
   const table = document.createElement('table');
@@ -20,12 +20,12 @@ export function createField(cols: number, rows: number) {
     for(let j = 0; j < cols; j++) {
       let td = document.createElement('td');
       td.className = "td";
-      td.className = "dead";
+      td.className = deadCSSClass;
       td.setAttribute("data-x", `${j}`);
       td.setAttribute("data-y", `${i}`);
       // td.id = "td";
       tr.appendChild(td);
-      row.push(0);
+      row.push(deadCell);
     }
     table.appendChild(tr);
     cells.push(row);

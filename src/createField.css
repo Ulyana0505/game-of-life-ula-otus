@@ -29,3 +29,10 @@
   border: 1px solid black;
   background-color: pink;
 }
+
+.will-be-alive{
+  height: 50px;
+  width: 50px;
+  border: 1px solid black;
+  background-color: yellow;
+}

@@ -1,10 +1,12 @@
-export const arrayOfCell = {current: [] as number[][]};
-export const deadCell = 0;
-export const aliveCell = 1;
-export const willBeDeadCell = 2;
+export const gameState = {arrayCells: [] as number[][], started: false, canceled: false};
+export const deadCell = 1;
+export const aliveCell = 2;
+export const willBeDeadCell = 3;
+export const willBeAlive = 4;
 export const deadCSSClass = "dead";
 export const aliveCSSClass = "alive";
-
-// и для css тоже сдлеать переменные для классов
+export const willBeAliveCSSClass = "will-be-alive";
+export const willBeDeadCSSClass = "will-be-dead";
+// export let gameHasBeenStarted = false;
 
 // console.dir("hi from constants " + JSON.stringify(arrayOfCell));

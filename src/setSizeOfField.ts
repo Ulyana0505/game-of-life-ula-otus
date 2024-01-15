@@ -1,19 +1,20 @@
+import { gameState } from "./constants";
 import { createField } from "./createField";
-// import { makeArrayOfCells } from "./arrayOfCells";
 
 export function buttonClick() {   
-    document.getElementById("table")?.remove();
+    if(gameState.started === false) {
+        document.getElementById("table")?.remove();
     
-    const inputCols = document.getElementById("inputCols") as HTMLInputElement;
-    const cols = Number(inputCols.value);
-    inputCols.value = "";
-    
-    const inputRows = document.getElementById("inputRows") as HTMLInputElement;
-    const rows = Number(inputRows.value);   
-    inputRows.value = "";
-    
-    createField(cols, rows);
-    //makeArrayOfCells();
+        const inputCols = document.getElementById("inputCols") as HTMLInputElement;
+        const cols = Number(inputCols.value);
+        inputCols.value = "";
+        
+        const inputRows = document.getElementById("inputRows") as HTMLInputElement;
+        const rows = Number(inputRows.value);   
+        inputRows.value = "";
+        
+        createField(cols, rows);
+    }
 }
 
 export function setRows (){

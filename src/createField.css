@@ -3,34 +3,28 @@
   margin: auto;
 }
 
-/* .td {
-  height: 50px;
-  width: 50px;
-  border: 1px solid black;
-} */
-
-.dead{
+.dead {
   height: 50px;
   width: 50px;
   border: 1px solid black;
   background-color: white;
 }
 
-.alive{
+.alive {
   height: 50px;
   width: 50px;
   border: 1px solid black;
   background-color: rgb(74, 19, 74);
 }
 
-.will-be-dead{
+.will-be-dead {
   height: 50px;
   width: 50px;
   border: 1px solid black;
   background-color: pink;
 }
 
-.will-be-alive{
+.will-be-alive {
   height: 50px;
   width: 50px;
   border: 1px solid black;

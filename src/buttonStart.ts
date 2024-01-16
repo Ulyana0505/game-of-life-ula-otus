@@ -82,4 +82,3 @@ export function timer(ms = gameState.timer) {
     }, ms);
   });
 }
-

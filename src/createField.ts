@@ -1,4 +1,3 @@
-// import css from "./createField.module.css";
 import "./createField.css";
 import { handlerClick } from "./tableOnClick";
 import {

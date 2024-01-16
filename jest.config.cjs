@@ -10,6 +10,15 @@ const config = {
     "\\.[jt]sx?$": "babel-jest",
   },
   collectCoverage: true,
+  collectCoverageFrom: [
+    "src/**/*"
+  ],
+  clearMocks: true,
+  globals: {
+    window: {},
+    jest: true,
+  },
+  roots: ["tests"]
 };
 
 module.exports = config;

@@ -1,4 +1,9 @@
-import { gameState, aliveCell } from "./constants";
+import {
+  gameState,
+  aliveCell,
+  idBtnGameStart,
+  elemGeneration,
+} from "./constants";
 import { generationStepOne, generationStepTwo } from "./generations";
 import { redrawField } from "./createField";
 
@@ -6,13 +11,17 @@ const buttonStart = document.createElement("button") as HTMLButtonElement;
 
 export function addButtonStart() {
   document.body.appendChild(buttonStart);
+  buttonStart.id = idBtnGameStart;
   buttonStart.innerHTML = "Start Game Of Life";
   buttonStart.addEventListener("click", gameStart);
 }
 
 export function gameStart() {
+  if (!gameState.arrayCells.length) return;
   buttonStart.disabled = true;
   gameState.started = true;
+  gameState.canceled = false;
+  gameState.generation = 0;
   gameGeneration();
 }
 
@@ -39,13 +48,20 @@ export function testGameEnd() {
       }
     }
   }
+
   const currentState = JSON.stringify(gameState.arrayCells);
   const isSameState = prevStateOfField.current === currentState;
   prevStateOfField.current = currentState;
   return counter === 0 || isSameState;
 }
 
+function viewGeneration() {
+  gameState.generation++;
+  elemGeneration.innerHTML = `Поколение: ${gameState.generation}`;
+}
+
 export async function gameGeneration() {
+  viewGeneration();
   generationStepOne();
   redrawField();
   await timer();
@@ -59,10 +75,11 @@ export async function gameGeneration() {
   }
 }
 
-export function timer() {
+export function timer(ms = gameState.timer) {
   return new Promise<void>((resolve) => {
     setTimeout(() => {
       resolve();
-    }, 300);
+    }, ms);
   });
 }
+

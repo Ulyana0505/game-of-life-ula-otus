@@ -10,8 +10,6 @@ export function generationStepOne() {
   const maxX = gameState.arrayCells[0].length;
   const maxY = gameState.arrayCells.length;
 
-  console.log("generations: ", { maxX, maxY });
-
   for (let y = 0; y < maxY; y++) {
     for (let x = 0; x < maxX; x++) {
       const counter = scan(x, y);
@@ -33,8 +31,6 @@ export function generationStepOne() {
 export function generationStepTwo() {
   const maxX = gameState.arrayCells[0].length;
   const maxY = gameState.arrayCells.length;
-
-  console.log("generations: ", { maxX, maxY });
 
   for (let y = 0; y < maxY; y++) {
     for (let x = 0; x < maxX; x++) {

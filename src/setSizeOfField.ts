@@ -41,6 +41,6 @@ export function setCols() {
 
 const button = document.createElement("button");
 document.body.appendChild(button);
-button.innerHTML = "Нажмите";
+button.innerHTML = "Create field";
 button.id = idBtnDrawTable;
 button.addEventListener("click", buttonClick);

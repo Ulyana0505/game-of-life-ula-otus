@@ -1,10 +1,5 @@
-import {
-  gameState,
-  deadCell,
-  aliveCell,
-  deadCSSClass,
-  aliveCSSClass,
-} from "./constants";
+import { gameState, deadCell, aliveCell } from "./constants";
+import styles from "./game-board.module.css";
 
 export function handlerClick(e: MouseEvent) {
   if (gameState.started) return;
@@ -20,9 +15,9 @@ export function handlerClick(e: MouseEvent) {
         gameState.arrayCells[y][x] = deadCell;
         break;
     }
-    target.className =
-      gameState.arrayCells[y][x] === aliveCell ? aliveCSSClass : deadCSSClass;
-    console.log(gameState.arrayCells[y][x], target.className);
+    target.classList.remove(styles.alive, styles.dead);
+    target.classList.add(
+      gameState.arrayCells[y][x] === aliveCell ? styles.alive : styles.dead,
+    );
   }
-  console.dir(gameState);
 }

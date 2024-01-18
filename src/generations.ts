@@ -7,8 +7,8 @@ import {
 } from "./constants";
 
 export function generationStepOne() {
-  const maxX = gameState.arrayCells[0].length;
-  const maxY = gameState.arrayCells.length;
+  const maxX = gameState.cols;
+  const maxY = gameState.rows;
 
   for (let y = 0; y < maxY; y++) {
     for (let x = 0; x < maxX; x++) {
@@ -29,8 +29,8 @@ export function generationStepOne() {
 }
 
 export function generationStepTwo() {
-  const maxX = gameState.arrayCells[0].length;
-  const maxY = gameState.arrayCells.length;
+  const maxX = gameState.cols;
+  const maxY = gameState.rows;
 
   for (let y = 0; y < maxY; y++) {
     for (let x = 0; x < maxX; x++) {

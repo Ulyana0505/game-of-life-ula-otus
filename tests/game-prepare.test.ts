@@ -1,4 +1,4 @@
-import { timer } from "../src/buttonStart";
+import { timer } from "../src/game-controll";
 import { createTable } from "./utils";
 import {
   aliveCell,

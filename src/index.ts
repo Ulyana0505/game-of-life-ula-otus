@@ -1,15 +1,10 @@
-import { setRows, setCols } from "./setSizeOfField";
-import { addButtonStart } from "./buttonStart";
-import { addButtonStop } from "./buttonStop";
-import { elemGeneration } from "./constants";
+import { tools } from "./tools";
+import { updateBoard, redrawBoard } from "./game-board";
 
 function draw() {
-  setRows();
-  setCols();
-  addButtonStart();
-  addButtonStop();
-
-  document.body.appendChild(elemGeneration);
+  tools();
+  updateBoard();
+  redrawBoard();
 }
 
 draw();

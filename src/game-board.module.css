@@ -1,32 +1,33 @@
+body {
+  display: flex;
+}
+
 .table {
   border: 1px solid black;
   margin: auto;
 }
 
+.cell {
+  height: 30px;
+  width: 30px;
+}
+
 .dead {
-  height: 50px;
-  width: 50px;
   border: 1px solid black;
   background-color: white;
 }
 
 .alive {
-  height: 50px;
-  width: 50px;
   border: 1px solid black;
   background-color: rgb(74, 19, 74);
 }
 
-.will-be-dead {
-  height: 50px;
-  width: 50px;
+.will_be_dead {
   border: 1px solid black;
   background-color: pink;
 }
 
-.will-be-alive {
-  height: 50px;
-  width: 50px;
+.will_be_alive {
   border: 1px solid black;
   background-color: yellow;
 }

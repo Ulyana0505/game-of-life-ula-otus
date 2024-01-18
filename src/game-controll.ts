@@ -1,20 +1,6 @@
-import {
-  gameState,
-  aliveCell,
-  idBtnGameStart,
-  elemGeneration,
-} from "./constants";
+import { gameState, aliveCell, elemGeneration, buttonStart } from "./constants";
 import { generationStepOne, generationStepTwo } from "./generations";
-import { redrawField } from "./createField";
-
-const buttonStart = document.createElement("button") as HTMLButtonElement;
-
-export function addButtonStart() {
-  document.body.appendChild(buttonStart);
-  buttonStart.id = idBtnGameStart;
-  buttonStart.innerHTML = "Start Game Of Life";
-  buttonStart.addEventListener("click", gameStart);
-}
+import { redrawBoard } from "./game-board";
 
 export function gameStart() {
   if (!gameState.arrayCells.length) return;
@@ -32,14 +18,14 @@ export function gameEnd() {
   alert(
     "GAME END: all cells are dead OR a stable configuration has occured OR game stop button clicked.",
   );
-  document.getElementById("table")?.remove();
+  //document.getElementById("table")?.remove();
 }
 
 const prevStateOfField = { current: "" };
 
 export function testGameEnd() {
-  const maxX = gameState.arrayCells[0].length;
-  const maxY = gameState.arrayCells.length;
+  const maxX = gameState.cols;
+  const maxY = gameState.rows;
   let counter = 0;
   for (let y = 0; y < maxY; y++) {
     for (let x = 0; x < maxX; x++) {
@@ -63,10 +49,10 @@ function viewGeneration() {
 export async function gameGeneration() {
   viewGeneration();
   generationStepOne();
-  redrawField();
+  redrawBoard();
   await timer();
   generationStepTwo();
-  redrawField();
+  redrawBoard();
   await timer();
   if (testGameEnd() || gameState.canceled) {
     gameEnd();

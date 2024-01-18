@@ -1,4 +1,4 @@
-import { timer } from "../src/buttonStart";
+import { timer } from "../src/game-controll";
 import { gameState, idBtnDrawTable } from "../src/constants";
 import { createTable } from "./utils";
 

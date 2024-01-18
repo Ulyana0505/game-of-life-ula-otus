@@ -1,4 +1,4 @@
-import { timer } from "../src/buttonStart";
+import { timer } from "../src/game-controll";
 import {
   aliveCell,
   gameState,

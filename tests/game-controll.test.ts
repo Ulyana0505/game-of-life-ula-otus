@@ -17,9 +17,6 @@ describe("game-circle", () => {
   it("start", async () => {
     gameState.timer = 1;
 
-    document.getElementById(idBtnGameStart)?.click();
-    expect(gameState.started).toEqual(false);
-
     createTable(7, 7);
     await timer(0);
 
@@ -41,10 +38,15 @@ describe("game-circle", () => {
     createTable(7, 7);
     await timer(0);
     fill();
-    document.getElementById(idBtnGameStart)?.click();
-    await timer(0);
     document.getElementById(idBtnGameStop)?.click();
     await timer(0);
+    expect(gameState.canceled).toEqual(false);
+    document.getElementById(idBtnGameStart)?.click();
+    await timer(0);
+    expect(gameState.canceled).toEqual(false);
+    document.getElementById(idBtnGameStop)?.click();
+    await timer(0);
+    expect(gameState.canceled).toEqual(true);
   });
 });
 

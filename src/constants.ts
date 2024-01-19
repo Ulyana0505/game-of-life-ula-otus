@@ -18,6 +18,7 @@ export const idInputCols = "inputCols";
 export const idInputTime = "inputTime";
 export const idBtnGameStart = "game-start";
 export const idBtnGameStop = "game-stop";
+export const idLabelSpeed = "speed";
 
 export const elemGeneration = document.createElement("div");
 

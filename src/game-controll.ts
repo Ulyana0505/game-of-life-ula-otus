@@ -3,7 +3,6 @@ import { generationStepOne, generationStepTwo } from "./generations";
 import { redrawBoard } from "./game-board";
 
 export function gameStart() {
-  if (!gameState.arrayCells.length) return;
   buttonStart.disabled = true;
   gameState.started = true;
   gameState.canceled = false;
@@ -18,7 +17,6 @@ export function gameEnd() {
   alert(
     "GAME END: all cells are dead OR a stable configuration has occured OR game stop button clicked.",
   );
-  //document.getElementById("table")?.remove();
 }
 
 const prevStateOfField = { current: "" };

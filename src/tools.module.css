@@ -3,3 +3,9 @@
     flex-direction: column;
     gap: 10px;
 }
+
+.value::after {
+    position: absolute;
+    content: ": "attr(data-value);
+    display: inline-block;
+}

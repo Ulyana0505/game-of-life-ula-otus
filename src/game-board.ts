@@ -1,68 +1,68 @@
-import "./game-board.module.css";
-import { handlerClick } from "./cell-click";
+import './game-board.module.css'
+import { handlerClick } from './cell-click'
 import {
   gameState,
   deadCell,
   aliveCell,
   willBeAlive,
   willBeDeadCell,
-} from "./constants";
-import styles from "./game-board.module.css";
+} from './constants'
+import styles from './game-board.module.css'
 
 export function updateBoard() {
-  const board = [] as number[][];
+  const board = [] as number[][]
   for (let y = 0; y < gameState.rows; y++) {
-    const row = [] as number[];
+    const row = [] as number[]
     for (let x = 0; x < gameState.cols; x++) {
       if (gameState.arrayCells[y] && gameState.arrayCells[y][x]) {
-        row.push(gameState.arrayCells[y][x]);
+        row.push(gameState.arrayCells[y][x])
       } else {
-        row.push(deadCell);
+        row.push(deadCell)
       }
     }
-    board.push(row);
+    board.push(row)
   }
-  gameState.arrayCells = board;
+  gameState.arrayCells = board
 }
 
 export function redrawBoard() {
-  const table = document.createElement("table");
-  table.classList.add(styles.table);
-  table.id = "table";
+  const table = document.createElement('table')
+  table.classList.add(styles.table)
+  table.id = 'table'
 
-  const maxX = gameState.cols;
-  const maxY = gameState.rows;
+  const maxX = gameState.cols
+  const maxY = gameState.rows
 
   for (let y = 0; y < maxY; y++) {
-    const tr = document.createElement("tr");
+    const tr = document.createElement('tr')
     for (let x = 0; x < maxX; x++) {
-      const td = document.createElement("td");
-      td.classList.add(styles.cell);
+      const td = document.createElement('td')
+      td.classList.add(styles.cell)
       switch (gameState.arrayCells[y][x]) {
         case deadCell:
-          td.classList.add(styles.dead);
-          break;
+          td.classList.add(styles.dead)
+          break
         case aliveCell:
-          td.classList.add(styles.alive);
-          break;
+          td.classList.add(styles.alive)
+          break
         case willBeDeadCell:
-          td.classList.add(styles.will_be_dead);
-          break;
+          td.classList.add(styles.will_be_dead)
+          break
         case willBeAlive:
-          td.classList.add(styles.will_be_alive);
-          break;
+          td.classList.add(styles.will_be_alive)
+          break
       }
-      td.setAttribute("data-x", `${x}`);
-      td.setAttribute("data-y", `${y}`);
-      tr.appendChild(td);
+      td.setAttribute('data-x', `${x}`)
+      td.setAttribute('data-y', `${y}`)
+      tr.appendChild(td)
     }
-    table.appendChild(tr);
+    table.appendChild(tr)
   }
-  table.addEventListener("click", handlerClick);
-  const prevTable = document.getElementById("table");
+  table.addEventListener('click', handlerClick)
+  const prevTable = document.getElementById('table')
   if (prevTable) {
-    prevTable.replaceWith(table);
+    prevTable.replaceWith(table)
   } else {
-    document.body.appendChild(table);
+    document.body.appendChild(table)
   }
 }

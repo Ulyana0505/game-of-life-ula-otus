@@ -1,11 +1,11 @@
 export const gameState = {
-  arrayCells: [] as number[][],
-  started: false,
-  canceled: false,
-  generation: 0,
-  timer: 300,
-  cols: 5,
-  rows: 5,
+    arrayCells: [] as number[][],
+    started: false,
+    canceled: false,
+    generation: 0,
+    timer: 300,
+    cols: 5,
+    rows: 5,
 }
 export const deadCell = 1
 export const aliveCell = 2
